@@ -13,11 +13,11 @@ public class FB_TEST {
         String baseURL = "https://www.facebook.com";
 
         try {
-//            System.setProperty("webdriver.gecko.driver","/Users/markomasterl/Downloads/webdrivers/firefox/geckodriver");
+//            System.setProperty("webdriver.gecko.driver","/Users/markomasterl/Library/Selenium/WebDriver/firefox/geckodriver");
 //            System.setProperty("webdriver.firefox.bin", "/Applications/Firefox.app/Contents/MacOS/firefox-bin");
 //            WebDriver driver = new FirefoxDriver();
 
-            System.setProperty("webdriver.chrome.driver", "/Users/markomasterl/Downloads/webdrivers/chrome/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "/Users/markomasterl/Library/Selenium/WebDriver/chrome/chromedriver");
             driver = new ChromeDriver();
 
             driver.manage().deleteAllCookies();
@@ -26,6 +26,7 @@ public class FB_TEST {
             driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
             driver.get(baseURL);
             testLogin();
+            driver.quit();
         } catch (Exception e) {
             e.printStackTrace();
         }
